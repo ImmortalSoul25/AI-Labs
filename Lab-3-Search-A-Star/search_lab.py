@@ -85,7 +85,7 @@ def display_path(rows,path):
     grid=[list(x) for x in rows]
     for r,c in path:
         if grid[r][c] not in "SG": grid[r][c]="*"
-    return "\\n".join("".join(x) for x in grid)
+    return "\n".join("".join(x) for x in grid)
 
 def show(name,result):
     print(f"{name}: found={result.found}, path_length={result.cost}, states_expanded={result.expanded}")
@@ -95,14 +95,14 @@ def run_tests():
     print("=== Original warehouse ===")
     a=astar(WAREHOUSE); b=bfs(WAREHOUSE); show("A*",a); print(display_path(WAREHOUSE,a.path)); show("BFS",b)
     assert a.found and b.found and a.cost==b.cost
-    print("\\n=== Trivial adjacent goal ===")
+    print("\n=== Trivial adjacent goal ===")
     t=astar(TRIVIAL); show("A*",t); assert t.found and t.cost==1 and t.actions==["R"]
-    print("\\n=== No solution ===")
+    print("\n=== No solution ===")
     n=astar(NO_SOLUTION); show("A*",n); assert not n.found and n.cost is None
-    print("\\n=== Alternative paths ===")
+    print("\n=== Alternative paths ===")
     aa=astar(ALTERNATIVE); bb=bfs(ALTERNATIVE); show("A*",aa); show("BFS",bb); assert aa.found and aa.cost==bb.cost
-    print("\\n=== BFS versus A* on original map ==="); show("BFS",b); show("A* Manhattan",a)
-    print("\\n=== Heuristic investigation ===")
+    print("\n=== BFS versus A* on original map ==="); show("BFS",b); show("A* Manhattan",a)
+    print("\n=== Heuristic investigation ===")
     for label,h in (("h=0",lambda n,g:0),("Manhattan",manhattan),("Euclidean",euclidean),("2 x Manhattan",lambda n,g:2*manhattan(n,g))):
         show(label,astar(WAREHOUSE,h))
     print("\\nAll assertions passed.")
