@@ -20,5 +20,6 @@ AI-Labs/
 - **Lab 1 — Language Models:** original report and implementation retained.
 - **Lab 2 — Neural Models:** XOR classification, backpropagation/gradient inspection, initialization symmetry, activation comparison, and three-class classification.
 - **Lab 3 — Search and A*:** warehouse pathfinding, BFS comparison, and heuristic experiments.
+- **Lab 4 — Logical Planning:** STRIPS-style action preconditions/effects, BFS planning, and required validation tests.
 
 See each lab folder's README/report for instructions and details.
