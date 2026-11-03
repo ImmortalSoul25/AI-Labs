@@ -2,12 +2,17 @@
 
 This folder contains the implementation and report for the Neural Models laboratory.
 
+## Files
+
+- `neural_models_lab.py`: runnable PyTorch experiments for binary XOR, gradients, initialization symmetry, activation comparison, and the three-class task.
+- `REPORT.md`: results and discussion.
+
 ## Run
 
-Install the dependencies with `pip install torch numpy matplotlib`, then run:
+Install dependencies with `pip install torch numpy`, then run:
 
 ```bash
 python neural_models_lab.py
 ```
 
-The script uses CPU execution and prints the binary XOR experiment, gradient and symmetry checks, activation comparison, and three-class experiment.
+The script runs on CPU; a GPU is not required.
